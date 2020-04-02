@@ -30,7 +30,10 @@ puts "----------------------------------------------------------"
 
 class Pessoa
 
-    attr_accessor :nome, :idade #aceita vários atributos
+    attr_accessor :nome, :idade #aceita vários atributos, metodo de acesso
+
+    #attr_reader - apenas para leitura
+    #attr_writer - apenas para escrita
 
         def altura
     1.80
@@ -39,15 +42,23 @@ class Pessoa
 
 end
 
+
+#atributo virtual -  o atributo não existe realmente, pois não criamos nem definimos ele, "existe" virtualmente
+
+
+    
 pessoa1 = Pessoa.new
 
 puts "Variavel pessoa: #{pessoa1}"#interpolação
 
 puts pessoa1.nome ="Lais"
 puts pessoa1.idade= 25
-puts pessoa1.altura
+
+puts descricao
 
 puts "----------------------------------------------------------"
+
+
 
 #criando uma metodo de somar numeros
 def soma(a,b)
@@ -57,6 +68,3 @@ end
 
 #passando os parametros e imprimindo os dados
 puts soma(10,20)
-
-
-puts "----------------------------------------------------------"
