@@ -43,19 +43,6 @@ class Pessoa
 end
 
 
-#atributo virtual -  o atributo não existe realmente, pois não criamos nem definimos ele, "existe" virtualmente
-
-
-    
-pessoa1 = Pessoa.new
-
-puts "Variavel pessoa: #{pessoa1}"#interpolação
-
-puts pessoa1.nome ="Lais"
-puts pessoa1.idade= 25
-
-puts descricao
-
 puts "----------------------------------------------------------"
 
 
@@ -68,3 +55,22 @@ end
 
 #passando os parametros e imprimindo os dados
 puts soma(10,20)
+
+
+puts "----------------------------------------------------------"
+
+
+class Gente
+
+attr_accessor :nome, :idade
+
+    #metodo construtor
+
+    def  initialize(nome, idade)
+  @nome = nome
+  @idade = idade   
+    end
+end
+
+pessoa2 = Gente.new "lais", 23
+puts pessoa2
