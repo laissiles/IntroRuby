@@ -74,3 +74,39 @@ end
 
 pessoa2 = Gente.new "lais", 23
 puts pessoa2
+
+puts "----------------------------------------------------------"
+
+#Visibilidade dos metodos - private= só pode ser acessado pela classe pai e suas filhas
+
+class Automovel #classe pai
+
+    #self.= cria metodos de classe #metodo de classes
+   def self.tipo_cambio
+           puts "Manual"
+   end
+   
+   #metodo de instancia
+       def acelera #metodo pai
+           puts "acionando o acelerador"
+       end
+   end
+
+   private #no ruby usamos apenas o private, este metodo está visivel a classe pai e as classes filhas
+   def verificando_combustivel
+    puts "VC TEM GASOLINA?"
+    end
+
+
+#classe 2- carro herando dados de automovel
+   class Carro < Automovel  #A classe carro herda os metodos da classe automovel
+
+    def acelera #metodo filho
+        puts "velocidade aumentando"
+        super
+       end   
+end
+
+carro2 = Carro.new
+
+puts carro2.verificando_combustivel
